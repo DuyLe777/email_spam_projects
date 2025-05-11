@@ -84,7 +84,8 @@ python src/evaluate_model.py
 ### 3. Chạy ứng dụng web    
 
 ```bash
-python src/app.py
+cd src
+python app.py
 ```
 
 Sau khi chạy, truy cập ứng dụng web tại địa chỉ: http://localhost:5000
