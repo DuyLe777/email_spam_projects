@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request
-import joblib
-import re
-from nltk.corpus import stopwords
+import joblib # load mo hinh va vectorizer  luu san 
+import re # thu vien reget xu li van ban
+from nltk.corpus import stopwords # loai bo cac tu dừng trong tiếng anh
 
 app = Flask(__name__)
-model = joblib.load("spam_classifier_model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
-stop_words = set(stopwords.words('english'))
+model = joblib.load("spam_classifier_model.pkl") # mô hình đã được huấn luyện trước đó
+vectorizer = joblib.load("vectorizer.pkl") # bộ biến đổi văn bản
+stop_words = set(stopwords.words('english')) # Danh sách các từ dừng để loại bỏ khi xử lý dữ liệu đầu vào.
 
 def preprocess(text):
-    text = re.sub(r'\W', ' ', text.lower())
+    text = re.sub(r'\W', ' ', text.lower()) # chuyển văn bản thành chữ thường loại bỏ kí tự khong phải \w
     words = [word for word in text.split() if word not in stop_words]
     return ' '.join(words)
 
