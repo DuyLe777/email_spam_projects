@@ -68,14 +68,13 @@ python src/app.py
 ## 📊 Cấu trúc dự án
 
 ```
-spam-classifier/
+spam-classifier-project/
 ├── src/
 │   ├── spam_classifier.py    # Mô hình ML và xử lý dữ liệu
 │   ├── app.py               # Web application
 │   ├── spam.csv             # Dataset gốc
 │   ├── spam_classifier_model.pkl    # Model đã train
 │   ├── vectorizer.pkl       # Vectorizer đã train
-│   ├── spam_classifier_metadata.json # Metadata của model
 │   ├── static/              # CSS, JS files
 │   └── templates/           # HTML templates
 ├── requirements.txt         # Dependencies
