@@ -79,13 +79,9 @@ python src/spam_classifier.py
 python src/evaluate_model.py
 ```
 
-### 3. Chạy ứng dụng desktop
 
-```bash
-python src/spam_gui.py
-```
 
-### 4. Chạy ứng dụng web    
+### 3. Chạy ứng dụng web    
 
 ```bash
 python src/app.py
