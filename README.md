@@ -42,8 +42,8 @@ Dự án này là một hệ thống phân loại thư rác sử dụng thuật 
 
 1. Clone repository:
 ```bash
-git clone https://github.com/your-username/spam-classifier.git
-cd spam-classifier
+git clone https://github.com/DuyLe777/spam-classifier-project.git
+cd spam-classifier-project
 ```
 
 2. Tạo môi trường ảo:
