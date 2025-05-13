@@ -14,13 +14,13 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 # Cài đặt NLTK
 print("1. Cài đặt NLTK...")
 nltk.download('stopwords')
-print("✅ Đã cài đặt NLTK.")
+print("Đã cài đặt NLTK.")
 
 # Xử lý dữ liệu
 print("\n2. Xử lý dữ liệu...")
 df = pd.read_csv("spam.csv", encoding="utf-8")[["Category", "Message"]]
 df.columns = ['label', 'message']
-print(f"✅ Đã tải dữ liệu: {len(df)} mẫu.")
+print(f"Đã tải dữ liệu: {len(df)} mẫu.")
 print(f"- Thống kê nhãn:\n{df['label'].value_counts()}")
 
 # Tiền xử lý văn bản
@@ -38,7 +38,7 @@ def preprocess(text):
     return ' '.join(words)
 
 df['processed'] = df['message'].apply(preprocess)
-print("✅ Đã tiền xử lý văn bản.")
+print("Đã tiền xử lý văn bản.")
 
 # Vector hóa và chia dữ liệu
 print("\n4. Vector hóa và chia dữ liệu...")
@@ -48,7 +48,7 @@ y = df['label'].map({'ham': 0, 'spam': 1})
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42)
-print(f"✅ Đã vector hóa dữ liệu: {X.shape[0]} mẫu, {X.shape[1]} đặc trưng.")
+print(f"Đã vector hóa dữ liệu: {X.shape[0]} mẫu, {X.shape[1]} đặc trưng.")
 print(f"- Tập huấn luyện: {X_train.shape[0]} mẫu")
 print(f"- Tập kiểm thử: {X_test.shape[0]} mẫu")
 
@@ -61,7 +61,7 @@ model.fit(X_train, y_train)
 print("\n6. Lưu mô hình...")
 joblib.dump(model, 'spam_classifier_model.pkl')
 joblib.dump(vectorizer, 'vectorizer.pkl')
-print("✅ Đã huấn luyện và lưu mô hình.")
+print("Đã huấn luyện và lưu mô hình.")
 
 # Đánh giá mô hình
 print("\n7. Đánh giá mô hình...")
@@ -88,4 +88,4 @@ print(f" [FN={cm[1][0]} TP={cm[1][1]}]]")
 print("\nBáo cáo phân loại chi tiết:")
 print(classification_report(y_test, y_pred, target_names=['Ham', 'Spam']))
 
-print("\n✅ Hoàn thành quá trình huấn luyện và đánh giá mô hình.")
+print("\nHoàn thành quá trình huấn luyện và đánh giá mô hình.")
